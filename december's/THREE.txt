@@ -1,0 +1,62 @@
+You are given a string S. You can get a coin by choosing and removing three characters from S if the chosen characters form a palindrome in some order (possibly different from their order in the string). This operation may be performed repeatedly on the resulting string. Find the maximum number of coins you can get.
+
+Input
+The first line of the input contains a single integer T denoting the number of test cases. The description of T test cases follows.
+The first and only line of each test case contains a single string S.
+Output
+For each test case, print a single line containing one integer ― the maximum number of coins you can get.
+
+Constraints
+1≤T≤10
+1≤|S|≤105
+S contains only lowercase English letters
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# cook your dish here
+t=int(input())
+for i in range (0,t):
+    s=input()
+    c=0
+    l=len(s)
+    for e in s:
+        n=s.count(e)
+        p=int(n/2)
+        if(p>0):
+            if(c+p<=int(l/3)):
+                c=c+p
+            else:
+                c=int(l/3)
+        s.replace(e,'')
+    print(c)
+            
+        
+        
+        
